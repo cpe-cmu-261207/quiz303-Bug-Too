@@ -13,7 +13,7 @@ const likecheck = (props: CommentType) => {
     else return;
 }
 
-const ccc = (props: CommentType) => {
+const CCC = (props: CommentType) => {
     return (
         <div>
             <div className="">
@@ -22,22 +22,18 @@ const ccc = (props: CommentType) => {
                     <div className="bg-gray-200 rounded-lg p-2">
                         <p className="font-semibold">{props.username}</p>
                         <p>{props.commentText}</p>
-                        {likecheck}
+                        {likecheck(props)}
                     </div>
                 </div>
 
                 <div>
-                    <Rep
-                        username={props.username}
-                        userImagePath={props.userImagePath}
-                        commentText={props.commentText}
-                        likeNum={props.likeNum}
-                        replies={props.replies} />)
-
+                    {
+                        props.replies.map(e => <Rep username={e.username} userImagePath={e.userImagePath} commentText={e.commentText} likeNum={e.likeNum} replies={e.replies} />)
+                    }
                 </div>
             </div>
         </div>
     )
 }
 
-export default ccc
+export default CCC

@@ -1,7 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import comment from './component/comment';
+import Cm from './component/comment'
+import { comments } from './data/comments';
+
+
 function App() {
   return (
     <div className="p-2">
@@ -27,8 +30,11 @@ function App() {
           </div>
 
         </div>
+        {/* ส่วนของเจ้าของ cc */}
+        <div className="p-2">
+      <Cm cc={comments}/>
+    </div>
 
-        
 
       </div>
     </div>

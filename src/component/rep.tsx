@@ -7,17 +7,17 @@ const likecheck = (props: CommentType) => {
             <p className='text-gray-500'>{props.likeNum}</p>
         </div>
     )
-    else return;
+    else return ;
 }
 
 const Rep = (props: CommentType) => {
     return (
-        <div className="flex p-2 items-start space-x-2">
+        <div className="flex p-2 items-start space-x-2 pl-14">
             <img className="w-10 w-10 rounded-full" src={props.userImagePath}></img>
             <div className="bg-gray-200 rounded-lg p-2">
                 <p className="font-semibold">{props.username}</p>
                 <p>{props.commentText}</p>
-                {likecheck}
+                {likecheck(props)}
             </div>
         </div>
     )
